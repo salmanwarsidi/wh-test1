@@ -1,0 +1,82 @@
+<div class="card-info">
+  <div class="row">
+    <div class="col-md-9">
+      <h5 [innerHTML]="card.title"></h5>
+    </div>
+    <div class="col-md-3 text-right">
+      <span
+        class="fa rating-star"
+        *ngFor="let num of [1, 2, 3, 4, 5]"
+        [ngClass]="{
+          'fa-star': card.rate >= num,
+          'fa-star-o': card.rate < num
+        }"
+      ></span>
+      <span (click)="onShowReview()" style="cursor: pointer;">
+        {{ card.reviewCount }} Reviews</span
+      >
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-3">
+      <div class="pull-left">
+        <img
+          [src]="'assets/images/' + card.image"
+          width="140px"
+          height="80px"
+        />
+      </div>
+      <div class="pull-right text-center">
+        <span>{{ card.type }}</span>
+        <br /><br />
+        <ng-container
+          *ngIf="card.credit >= 750 && card.credit <= 850; else goodCredit"
+        >
+          <span class="btn blue no-decoration">Very Good</span>
+        </ng-container>
+        <ng-template #goodCredit>
+          <ng-container
+            *ngIf="card.credit >= 700 && card.credit <= 749; else fairCredit"
+          >
+            <span class="btn btn-sm btn-info">Good</span>
+          </ng-container>
+        </ng-template>
+        <ng-template #fairCredit>
+          <ng-container
+            *ngIf="card.credit >= 640 && card.credit <= 699; else badCredit"
+          >
+            <span class="btn btn-sm btn-info">Fair</span>
+          </ng-container>
+        </ng-template>
+        <ng-template #badCredit>
+          <ng-container
+            *ngIf="card.credit >= 300 && card.credit <= 639; else limitCredit"
+          >
+            <span class="btn btn-sm btn-info">Bad</span>
+          </ng-container>
+        </ng-template>
+        <ng-template #limitCredit>
+          <span class="btn blue no-decoration">Limited</span>
+        </ng-template>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <ul>
+        <li *ngFor="let attr of card.attributes" class="pt-2">
+          {{ attr }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-3">
+      <button class="btn orange no-decoration w-100" [routerLink]="['/credit', card.id, card.title]">
+        Apply Now
+      </button>
+    </div>
+  </div>
+  <hr />
+  <ng-container *ngIf="lastItem">
+    <a href="#">See Details and Fees</a>
+  </ng-container>
+</div>

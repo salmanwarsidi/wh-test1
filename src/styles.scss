@@ -1,0 +1,635 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap-scss/bootstrap';
+
+// Base SCSS files
+@import "~bootstrap-scss/functions";
+@import "~bootstrap-scss/variables";
+@import "~bootstrap-scss/mixins";
+@import "~bootstrap-scss/root";
+@import "~bootstrap-scss/reboot";
+@import "~bootstrap-scss/type";
+
+span {
+  word-wrap: break-word;
+}
+
+.top-nav {
+  padding-top: 3rem;
+  background-color: #221338;
+  cursor: pointer;
+}
+
+.navigation-link{
+  background-color: white;
+  color: black;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.navigation-link > div {
+  text-align: center;
+  border-right: 1px solid #ccc;
+  padding: .5rem;
+  cursor: pointer;
+}
+.navigation-link > div:last-child {
+  border-right: none;
+}
+
+.is-active {
+  background-color: yellow;
+}
+
+.rating-star {
+  color: #07d3d3;
+}
+
+
+.content {
+  margin: auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+.cards {
+  background: #edeff0;
+  font-size: 15px;
+  padding: 3rem;
+}
+
+.cards .af-icon-lock-filled:after {
+  font-family: "icons-set";
+}
+
+.card-info {
+  overflow: hidden;
+  text-align: left;
+  border-radius: 4px;
+  background-color: white;
+  padding: 30px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.item-image {
+  width: 110px;
+  height: 80px;
+}
+
+.cards .card-info .details {
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0px;
+  padding: 0px 15px;
+  margin: 0px -10px;
+  padding-bottom: 5px;
+}
+
+.cards .card-info .details.show {
+  opacity: 1;
+  max-height: 2000px;
+}
+
+.cards .card-info .details > h2 {
+  font-size: 120%;
+  font-weight: normal;
+  font-family: "ProximaNova-Bold", Helvetica, Arial, sans-serif;
+  color: #07d3d3;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.cards .card-info .details > h2.sml {
+  font-size: 100%;
+  color: #000;
+  padding-top: 15px;
+  padding-bottom: 0px;
+}
+
+.cards .card-info .details > h2.mob-details {
+  display: none;
+}
+
+.cards .card-info .details .splitter + h2,
+.cards .card-info .details p + h2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.cards .card-info .details > p {
+  padding: 0 0 20px;
+}
+
+.cards .card-info .details > h3,
+.cards .card-info .details h4 {
+  font-size: 15px;
+  font-weight: normal;
+  font-family: "ProximaNova-Bold", Helvetica, Arial, sans-serif;
+}
+
+.cards .card-info .details > h3 i,
+.cards .card-info .details h4 i {
+  font-style: normal;
+  float: right;
+  color: #07d3d3;
+  font-size: 120%;
+  display: block;
+  width: 144px;
+  text-align: center;
+}
+
+.cards .card-info .details > h3.simple {
+  padding-bottom: 20px;
+}
+
+.cards .card-info .top {
+  text-align: justify;
+  margin-bottom: -20px;
+}
+
+.cards .card-info .top:after {
+  content: "";
+  width: 100%;
+  display: inline-block;
+}
+
+.cards .card-info .top h1 {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "ProximaNova-Regular", Helvetica, Arial, sans-serif;
+  margin-bottom: 5px;
+  line-height: 140%;
+}
+
+.cards .card-info .top .left {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-right: -260px;
+  padding-right: 240px;
+  text-align: left;
+}
+
+.cards .card-info .top .left .title {
+  padding-left: 105px;
+  margin-left: -98px;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.cards .card-info .top .left .title:before {
+  content: "";
+  height: 62px;
+  margin-right: -5px;
+}
+
+.cards .card-info .top .left .title > .holder,
+.cards .card-info .top .left .title:before {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+body {
+  height: 100%;
+  background: #edeff0;
+}
+
+@font-face {
+  font-family: "ProximaNova-Bold";
+  src: url("assets/fonts/proxima/ProximaNova-Bold.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-Light";
+  src: url("assets/fonts/proxima/Proxima\ Nova\ Light.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-Regular";
+  src: url("assets/fonts/proxima/ProximaNova-Reg.otf");
+}
+
+@font-face {
+  font-family: "ProximaNovaS-Bold";
+  src: url("assets/fonts/proxima/Proxima\ Nova\ Semibold.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-RegularIt";
+  src: url("assets/fonts/proxima/Proxima\ Nova\ Regular\ Italic.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-Extrabld";
+  src: url("assets/fonts/proxima/ProximaNova-Extrabold.otf");
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font: normal normal normal 93.75%/1 "ProximaNova-Regular", Helvetica, Arial,
+    sans-serif;
+}
+
+body {
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-family: "ProximaNova-Bold", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+a {
+  color: #1194f6;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.no-decoration {
+  text-decoration: none !important;
+}
+
+.btn {
+  padding: 0 12px;
+  height: 35px;
+  line-height: 35px;
+  font-family: "ProximaNova-Bold", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  border: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: color 0.3s, background-color 0.3s;
+  -o-transition: color 0.3s, background-color 0.3s;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+  font-size: 100%;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
+.btn::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.btn.full {
+  width: 100%;
+  text-align: center !important;
+}
+
+.btn.full.lf-ct .ct {
+  float: left;
+}
+
+.btn.fixed-w {
+  width: 100px;
+  text-align: center;
+}
+
+.btn.disabled {
+  filter: alpha(opacity=30);
+  background: #efefef !important;
+  color: #f0f0f0;
+}
+
+.btn.hidden {
+  visibility: hidden;
+}
+
+.btn.blue {
+  color: #fff;
+  background-color: #1194f6;
+}
+
+.btn.blue:not(.mob):hover,
+.btn.blue.touch,
+.btn.blue:focus {
+  background-color: #0f7fd4;
+}
+
+.btn.blue.blank {
+  color: #1194f6;
+  border: 1px solid #1194f6;
+}
+
+.btn.blue.blank:not(.mob):hover,
+.btn.blue.blank.touch,
+.btn.blue.blank:focus {
+  color: #fff;
+}
+
+.btn.blue-blank {
+  color: #1194f6;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn.blue-blank:not(.mob):hover,
+.btn.blue-blank.touch,
+.btn.blue-blank:focus:not(button) {
+  color: #0f7fd4;
+}
+
+.btn.red {
+  color: #fff;
+  background-color: #e66863;
+}
+
+.btn.red:not(.mob):hover,
+.btn.red.touch,
+.btn.red:focus:not(button) {
+  background-color: #d35954;
+}
+
+.btn.green {
+  color: #fff;
+  background-color: #63ca84;
+}
+
+.btn.green:not(.mob):hover,
+.btn.green.touch,
+.btn.green:focus {
+  background-color: #33b15b;
+}
+
+.btn.green.blank {
+  color: #63ca84;
+  border: 1px solid #63ca84;
+}
+
+.btn.green.blank:not(.mob):hover,
+.btn.green.blank.touch,
+.btn.green.blank:focus {
+  color: #fff;
+}
+
+.btn.fb {
+  position: relative;
+  padding-left: 45px;
+}
+
+.btn.fb:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 29px;
+  border-right: 1px solid #a9dff9;
+  background-image: url("//cdn.wallethub.com/images/wh2015/facebook-logo_V144ae70_.svg.gz");
+  background-size: 100% 100%;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//cdn.wallethub.com/images/wh2015/facebook-logo_V8dce061_.png", sizingMethod="scale");
+  background-position: center;
+  background-size: 10px 18px;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.btn.black {
+  color: #fff;
+  background-color: #5a5a5a;
+}
+
+.btn.black:not(.mob):hover,
+.btn.black.touch,
+.btn.black:focus {
+  background-color: #000;
+}
+
+.btn.black.blank {
+  color: #5a5a5a;
+  border: 1px solid #5a5a5a;
+}
+
+.btn.black.blank:not(.mob):hover,
+.btn.black.blank.touch,
+.btn.black.blank:focus {
+  color: #fff;
+}
+
+.btn.orange {
+  color: #fff;
+  background-color: #fa6e3d;
+}
+
+.btn.orange:not(.mob):hover,
+.btn.orange.touch,
+.btn.orange:focus {
+  background-color: #f36e21;
+}
+
+.btn.orange.blank {
+  color: #fa871e;
+  border: 1px solid #fa871e;
+}
+
+.btn.orange.blank:not(.mob):hover,
+.btn.orange.blank.touch,
+.btn.orange.blank:focus {
+  color: #fff;
+}
+
+.btn.white {
+  height: 28px;
+  line-height: 1.86667;
+  color: #a0a0a0;
+  border: 1px solid #a0a0a0;
+}
+
+.btn.white:not(.mob):hover,
+.btn.white.touch,
+.btn.white:focus {
+  color: #fff;
+  background-color: #a0a0a0;
+}
+
+.btn.white-two {
+  border: solid 1px #000;
+  color: #000;
+  background: #fff;
+}
+
+.btn.grey,
+.btn.grey-lt {
+  color: #fff;
+  background-color: #a0a0a0;
+}
+
+.btn.grey:not(.mob):hover,
+.btn.grey.touch,
+.btn.grey:focus,
+.btn.grey-lt:not(.mob):hover,
+.btn.grey-lt.touch,
+.btn.grey-lt:focus {
+  background-color: #787878;
+}
+
+.btn.grey.blank,
+.btn.grey-lt.blank {
+  color: #a0a0a0;
+  border: 1px solid #a0a0a0;
+}
+
+.btn.grey.blank:not(.mob):hover,
+.btn.grey.blank.touch,
+.btn.grey.blank:focus,
+.btn.grey-lt.blank:not(.mob):hover,
+.btn.grey-lt.blank.touch,
+.btn.grey-lt.blank:focus {
+  color: #fff;
+}
+
+.btn.grey-lt {
+  background-color: #c8c8c8;
+}
+
+.btn.aqua {
+  color: #fff;
+  min-height: 33px;
+  background-color: #07d3d3;
+}
+
+.btn.aqua:not(.mob):hover,
+.btn.aqua.touch,
+.btn.aqua:focus {
+  background-color: #29a79c;
+  color: #fff;
+}
+
+.btn.aqua.blank {
+  background: transparent;
+  color: #55cdc3;
+  border: 1px solid #55cdc3;
+}
+
+.btn.soft-blue {
+  color: #fff;
+  min-height: 33px;
+  background-color: #56bdf0;
+}
+
+.btn.soft-blue:not(.mob):hover,
+.btn.soft-blue.touch,
+.btn.soft-blue:focus {
+  background-color: #4697b7;
+  color: #fff;
+}
+
+.btn.soft-blue.blank {
+  background: transparent;
+  color: #56bdf0;
+  border: 1px solid #56bdf0;
+}
+
+.btn.lock:after {
+  display: inline-block;
+  margin-left: 8px;
+  width: 9px;
+  height: 10px;
+  background-image: url(//cdn.wallethub.com/images/wh2015/lock_V65273e1_.png);
+  background-image: none,
+    url(//cdn.wallethub.com/images/wh2015/lock_V02856fe_.svg.gz),
+    url(//cdn.wallethub.com/images/wh2015/lock_V65273e1_.png);
+  background-size: 100% 100%;
+  content: "";
+}
+
+.btn.lf-ct .ct {
+  height: 35px;
+  line-height: 35px;
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 1px solid #fff;
+  padding: 0px 8px;
+  margin-left: -12px;
+  margin-right: 8px;
+  margin-top: -1px;
+  font-style: normal;
+}
+
+.btn.blank {
+  background: transparent;
+  border-color: transparent;
+  color: #c7c7c7;
+}
+
+.btn .child {
+  box-sizing: border-box;
+  height: 100%;
+  display: block;
+  width: 100%;
+  line-height: inherit;
+  background: none;
+  border: none;
+  font-size: 100%;
+  font-family: inherit;
+  color: #fff;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.btn .child-small {
+  font-family: "ProximaNova-Regular", Helvetica, Arial, sans-serif;
+  font-size: 88%;
+  padding: 0 0 8px;
+  margin-top: -7px;
+  line-height: 100%;
+  color: inherit;
+}
+
+.btn.shrtcd-btn {
+  min-height: 40px;
+  height: auto;
+  line-height: 20px;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.btn.shrtcd-btn.full {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 45px;
+  font-size: 22px;
+  padding: 12px 20px;
+  font-family: "ProximaNovaS-Bold", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 767px) {
+  .btn.shrtcd-btn.full {
+    font-size: 15px;
+    font-family: "ProximaNova-Bold", Helvetica, Arial, sans-serif;
+  }
+}

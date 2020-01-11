@@ -1,0 +1,138 @@
+<div class="credit-info">
+  <form [formGroup]="personalForm">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>First Name</label>
+        <input
+          type="text"
+          id="first-name"
+          required
+          class="form-control"
+          formControlName="firstName"
+        />
+        <div
+          *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="firstName.errors.required">
+            First Name is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Last Name</label>
+        <input
+          type="text"
+          id="last-name"
+          class="form-control"
+          required
+          formControlName="lastName"
+        />
+        <div
+          *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="lastName.errors.required">
+            Last Name is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>Name Of Card</label>
+        <input type="text" id="card-name" class="form-control"
+        required formControlName="cardName" />
+        <div
+          *ngIf="cardName.invalid && (cardName.dirty || cardName.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="cardName.errors.required">
+            Card Name is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Email</label>
+        <input type="email" id="email" class="form-control"
+        required formControlName="email" />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="email.errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="email.errors.email">
+            Email is Invalid.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>Date Of Birth</label>
+        <input type="date" id="birth-date" class="form-control"
+        required formControlName="birthDate" />
+        <div
+          *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="birthDate.errors.required">
+            Birth Date is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Phone Number</label>
+        <input type="tel" id="tel-number" class="form-control"
+        required formControlName="phoneNumber" />
+        <div
+          *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="phoneNumber.errors.required">
+            Phone Number is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>Total Annoual Income</label>
+        <input type="text" id="annoual-income" class="form-control"
+        required
+        formControlName="totalIncome"
+        (blur)="transformTotalIncome($event)"/>
+        <div
+          *ngIf="totalIncome.invalid && (totalIncome.dirty || totalIncome.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="totalIncome.errors.required">
+            Annoual Income is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Income Source</label>
+        <select id="income-source" class="form-control">
+          <option value="-1">Choose One</option>
+          <option value="1">Employed</option>
+          <option value="2">Retried</option>
+          <option value="3">Self-Employed</option>
+          <option value="4">Bussiness Owner</option>
+          <option value="5">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button class="btn orange" (click)="back()">Back</button>
+        <button class="btn blue" (click)="submit()" [disabled]="personalForm.invalid">Continue</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+

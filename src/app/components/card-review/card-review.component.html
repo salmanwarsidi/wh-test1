@@ -1,0 +1,42 @@
+<div class="review-info">
+  <div class="row">
+    <div class="col-md-1 text-center">
+      <img
+        [src]="'assets/images/' + review.avatar"
+        class="rounded-circle profile-image"
+      />
+    </div>
+    <div class="col-md-11">
+      <div class="row">
+        <div class="col-md-10 text-left">
+          <span
+            class="fa rating-star"
+            *ngFor="let num of [1, 2, 3, 4, 5]"
+            [ngClass]="{
+              'fa-star': review.rate >= num,
+              'fa-star-o': review.rate < num
+            }"
+          ></span>
+          <br />
+          <span class="user-name">{{ review.user }}</span>
+        </div>
+        <div class="col-md-2 text-right">
+          <span class="date">{{ review.date }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-2 mb-2">
+          {{ review.description }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-left">
+          <i class="fa fa-thumbs-up up-vote"></i> <span class="mr-3 ml-2">{{ review.upVote }}</span>
+          <i class="fa fa-thumbs-down down-vote"></i><span class="mr-3 ml-2">{{ review.downVote }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
+

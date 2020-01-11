@@ -1,0 +1,23 @@
+.credit-info {
+  overflow: hidden;
+  text-align: left;
+  border-radius: 4px;
+  background-color: white;
+  margin-top: .5rem;
+  padding: 30px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.up-vote,
+.down-vote,
+.date,
+.user-name {
+  color: #c7c7c7;
+}
+
+.btn {
+  margin-right: 1rem;
+  margin-left: 1rem;;
+}

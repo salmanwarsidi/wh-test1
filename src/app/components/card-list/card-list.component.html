@@ -1,0 +1,23 @@
+<h3 class="mb-3">
+  Credit Opportunities With Good Approval Odds &trade;
+</h3>
+
+<app-card-info
+  *ngFor="let item of cards; let i = index"
+  class="mt-1"
+  [card]="item"
+  [lastItem]="cards.length - 1 === i"
+  (apply)="applyCreditCard($event)"
+  (showReview)="showReview($event)"
+></app-card-info>
+
+<div id="reviewContainer">
+  <ng-container *ngIf="isShowReview" >
+    <hr />
+    <span [innerHTML]="selectedCardTitle" (click)="isShowReview=false"></span>
+    <app-add-review [cardId]="selectedCardId" (addReview)="onAddReview($event)"></app-add-review>
+    <app-card-review *ngFor="let review of reviews" [review]="review">
+    </app-card-review>
+  </ng-container>
+</div>
+
